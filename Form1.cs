@@ -23,6 +23,8 @@ namespace kampyeri
         private string password = "Password=12345678;";
         private string connString;
         private NpgsqlConnection connection;
+        NpgsqlCommand comm;
+
         public Form1()
         {
             InitializeComponent();
@@ -38,7 +40,7 @@ namespace kampyeri
 
         private void button1_Click(object sender, EventArgs e)
         {
-            NpgsqlCommand comm = new NpgsqlCommand();
+            comm = new NpgsqlCommand();
             comm.Connection = connection;
             comm.CommandType = CommandType.Text;
             comm.CommandText = "SELECT * FROM tablem";
@@ -57,6 +59,14 @@ namespace kampyeri
             connection.Dispose();
             connection.Close();
             Application.Exit();
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            string data1 = indata1.Text;
+            string data2 = indata2.Text;
+            //TODO
+
         }
     }
 }
