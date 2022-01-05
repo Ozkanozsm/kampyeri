@@ -23,8 +23,8 @@ namespace kampyeri
         private string password = "Password=12345678;";
         private string connString;
         private NpgsqlConnection connection;
-        NpgsqlCommand comm;
-
+        private NpgsqlCommand comm;
+        private NpgsqlDataReader dr;
         public Form1()
         {
             InitializeComponent();
@@ -34,28 +34,40 @@ namespace kampyeri
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            connection.Open();
+            dbBaglan();
         }
+
+        private void dbBaglan()
+        {
+            try
+            {
+                connection.Open();
+                //MessageBox.Show("connection acildi");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("zort");
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            comm = new NpgsqlCommand();
-            comm.Connection = connection;
-            comm.CommandType = CommandType.Text;
-            comm.CommandText = "SELECT * FROM tablem";
-            NpgsqlDataReader dr = comm.ExecuteReader();
+            using (comm = new NpgsqlCommand("SELECT * FROM tablem", connection))
+            {
+                dr = comm.ExecuteReader();
+            }
+
             if (dr.HasRows)
             {
                 DataTable dt = new DataTable();
                 dt.Load(dr);
-                dataGridView1.DataSource = dt;
+                dataGView.DataSource = dt;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             connection.Dispose();
             connection.Close();
             Application.Exit();
@@ -63,10 +75,24 @@ namespace kampyeri
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            string data1 = indata1.Text;
-            string data2 = indata2.Text;
-            //TODO
-
+            int num;
+            bool success = int.TryParse(indata1.Text, out num);
+            if (success)
+            {
+                using (comm = new NpgsqlCommand("INSERT INTO tablem VALUES (@p1 , @p2)", connection))
+                {
+                    // text to string parse
+                    comm.Parameters.AddWithValue("p1", Convert.ToInt32(indata1.Text));
+                    comm.Parameters.AddWithValue("p2", indata2.Text);
+                    //MessageBox.Show(comm.CommandText);
+                    comm.ExecuteNonQuery();
+                }
+            }
+            else
+            {
+                MessageBox.Show($"'{indata1.Text}' sayı degil");
+                lblError.Text = "ilk haneye girilen veri sayı değil";
+            }
         }
     }
 }

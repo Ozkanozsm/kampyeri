@@ -29,22 +29,23 @@ namespace kampyeri
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGView = new System.Windows.Forms.DataGridView();
             this.btnGetData = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.indata1 = new System.Windows.Forms.TextBox();
             this.indata2 = new System.Windows.Forms.TextBox();
             this.btnInsert = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblError = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(462, 93);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGView.Location = new System.Drawing.Point(462, 93);
+            this.dataGView.Name = "dataGView";
+            this.dataGView.Size = new System.Drawing.Size(240, 150);
+            this.dataGView.TabIndex = 0;
             // 
             // btnGetData
             // 
@@ -86,25 +87,34 @@ namespace kampyeri
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(100, 23);
             this.btnInsert.TabIndex = 5;
-            this.btnInsert.Text = "button3";
+            this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Location = new System.Drawing.Point(80, 228);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 15);
+            this.lblError.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.indata2);
             this.Controls.Add(this.indata1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnGetData);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGView);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,12 +122,13 @@ namespace kampyeri
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGView;
         private System.Windows.Forms.Button btnGetData;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox indata1;
         private System.Windows.Forms.TextBox indata2;
         private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Label lblError;
     }
 }
 
