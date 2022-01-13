@@ -61,8 +61,9 @@ namespace kampyeri
                 //MessageBox.Show("connection acildi");
                 BaglantiYazisiUpdate(true);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
                 MessageBox.Show("zort");
             }
         }
@@ -95,7 +96,7 @@ namespace kampyeri
         private void button2_Click(object sender, EventArgs e)
         {
             BaglantiYazisiUpdate(false);
-            connection.Dispose();
+            //connection.Dispose();
             connection.Close();
             //Application.Exit();
         }

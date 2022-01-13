@@ -113,10 +113,10 @@ namespace kampyeri
             // 
             // lblConnection
             // 
-            this.lblConnection.AutoSize = true;
-            this.lblConnection.Location = new System.Drawing.Point(350, 32);
+            this.lblConnection.Location = new System.Drawing.Point(12, 9);
+            this.lblConnection.MinimumSize = new System.Drawing.Size(100, 50);
             this.lblConnection.Name = "lblConnection";
-            this.lblConnection.Size = new System.Drawing.Size(38, 15);
+            this.lblConnection.Size = new System.Drawing.Size(100, 50);
             this.lblConnection.TabIndex = 8;
             this.lblConnection.Text = "label1";
             // 
