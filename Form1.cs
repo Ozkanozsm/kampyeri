@@ -36,22 +36,29 @@ namespace kampyeri
 
         private void datagvStyle()
         {
-            dataGView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGView.RowsDefaultCellStyle.BackColor = Color.Beige;
             dataGView.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
             dataGView.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.Black;
             dataGView.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.White;
+            dataGView.RowsDefaultCellStyle.BackColor = Color.Beige;
             dataGView.RowsDefaultCellStyle.SelectionBackColor = Color.Black;
             dataGView.RowsDefaultCellStyle.SelectionForeColor = Color.White;
             dataGView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGView.ColumnHeadersDefaultCellStyle.BackColor = Color.Bisque;
+            dataGView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGView.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             //dataGView.EnableHeadersVisualStyles = false;
             //dataGView.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
             //dataGView.DefaultCellStyle.SelectionForeColor = Color.SeaGreen;
+            dataGView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             BaglantiYazisiUpdate(false);
             lblError.Text = null;
             //dbBaglan();

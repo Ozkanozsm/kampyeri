@@ -38,6 +38,7 @@ namespace kampyeri
             this.lblError = new System.Windows.Forms.Label();
             this.BtnConnect = new System.Windows.Forms.Button();
             this.lblConnection = new System.Windows.Forms.Label();
+            this.cmbxTable = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@ namespace kampyeri
             // 
             // btnGetData
             // 
-            this.btnGetData.Location = new System.Drawing.Point(423, 249);
+            this.btnGetData.Location = new System.Drawing.Point(423, 278);
             this.btnGetData.Name = "btnGetData";
             this.btnGetData.Size = new System.Drawing.Size(279, 44);
             this.btnGetData.TabIndex = 1;
@@ -126,11 +127,20 @@ namespace kampyeri
             this.lblConnection.TabIndex = 8;
             this.lblConnection.Text = "label1";
             // 
+            // cmbxTable
+            // 
+            this.cmbxTable.FormattingEnabled = true;
+            this.cmbxTable.Location = new System.Drawing.Point(423, 249);
+            this.cmbxTable.Name = "cmbxTable";
+            this.cmbxTable.Size = new System.Drawing.Size(279, 23);
+            this.cmbxTable.TabIndex = 9;
+            // 
             // FormKampY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbxTable);
             this.Controls.Add(this.lblConnection);
             this.Controls.Add(this.BtnConnect);
             this.Controls.Add(this.lblError);
@@ -160,6 +170,7 @@ namespace kampyeri
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Button BtnConnect;
         private System.Windows.Forms.Label lblConnection;
+        private System.Windows.Forms.ComboBox cmbxTable;
     }
 }
 
