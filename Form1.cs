@@ -34,7 +34,23 @@ namespace kampyeri
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dbBaglan();
+            BaglantiYazisiUpdate(false);
+            //dbBaglan();
+        }
+
+        private void BaglantiYazisiUpdate(bool isOpened)
+        {
+            if (isOpened)
+            {
+                lblConnection.Text = "Baglanti acik";
+                lblConnection.BackColor = Color.Green;
+            }
+            else
+            {
+
+                lblConnection.Text = "Baglanti kapali";
+                lblConnection.BackColor = Color.Red;
+            }
         }
 
         private void dbBaglan()
@@ -43,6 +59,7 @@ namespace kampyeri
             {
                 connection.Open();
                 //MessageBox.Show("connection acildi");
+                BaglantiYazisiUpdate(true);
             }
             catch (Exception)
             {
@@ -53,24 +70,34 @@ namespace kampyeri
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (comm = new NpgsqlCommand("SELECT * FROM tablem", connection))
+            try
             {
-                dr = comm.ExecuteReader();
+
+                using (comm = new NpgsqlCommand("SELECT * FROM tablem", connection))
+                {
+                    dr = comm.ExecuteReader();
+                }
+
+                if (dr.HasRows)
+                {
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+                    dataGView.DataSource = dt;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hata olustu.");
             }
 
-            if (dr.HasRows)
-            {
-                DataTable dt = new DataTable();
-                dt.Load(dr);
-                dataGView.DataSource = dt;
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            BaglantiYazisiUpdate(false);
             connection.Dispose();
             connection.Close();
-            Application.Exit();
+            //Application.Exit();
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -93,6 +120,11 @@ namespace kampyeri
                 MessageBox.Show($"'{indata1.Text}' sayı degil");
                 lblError.Text = "ilk haneye girilen veri sayı değil";
             }
+        }
+
+        private void BtnConnect_Click(object sender, EventArgs e)
+        {
+            dbBaglan();
         }
     }
 }

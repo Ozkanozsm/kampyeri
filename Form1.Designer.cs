@@ -36,6 +36,8 @@ namespace kampyeri
             this.indata2 = new System.Windows.Forms.TextBox();
             this.btnInsert = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
+            this.BtnConnect = new System.Windows.Forms.Button();
+            this.lblConnection = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,11 +101,32 @@ namespace kampyeri
             this.lblError.Size = new System.Drawing.Size(0, 15);
             this.lblError.TabIndex = 6;
             // 
+            // BtnConnect
+            // 
+            this.BtnConnect.Location = new System.Drawing.Point(80, 77);
+            this.BtnConnect.Name = "BtnConnect";
+            this.BtnConnect.Size = new System.Drawing.Size(75, 23);
+            this.BtnConnect.TabIndex = 7;
+            this.BtnConnect.Text = "Baglan";
+            this.BtnConnect.UseVisualStyleBackColor = true;
+            this.BtnConnect.Click += new System.EventHandler(this.BtnConnect_Click);
+            // 
+            // lblConnection
+            // 
+            this.lblConnection.AutoSize = true;
+            this.lblConnection.Location = new System.Drawing.Point(350, 32);
+            this.lblConnection.Name = "lblConnection";
+            this.lblConnection.Size = new System.Drawing.Size(38, 15);
+            this.lblConnection.TabIndex = 8;
+            this.lblConnection.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblConnection);
+            this.Controls.Add(this.BtnConnect);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.indata2);
@@ -129,6 +152,8 @@ namespace kampyeri
         private System.Windows.Forms.TextBox indata2;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Button BtnConnect;
+        private System.Windows.Forms.Label lblConnection;
     }
 }
 
