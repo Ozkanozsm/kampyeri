@@ -44,16 +44,16 @@ namespace kampyeri
             // dataGView
             // 
             this.dataGView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGView.Location = new System.Drawing.Point(462, 93);
+            this.dataGView.Location = new System.Drawing.Point(423, 65);
             this.dataGView.Name = "dataGView";
-            this.dataGView.Size = new System.Drawing.Size(240, 150);
+            this.dataGView.Size = new System.Drawing.Size(279, 178);
             this.dataGView.TabIndex = 0;
             // 
             // btnGetData
             // 
-            this.btnGetData.Location = new System.Drawing.Point(462, 249);
+            this.btnGetData.Location = new System.Drawing.Point(423, 249);
             this.btnGetData.Name = "btnGetData";
-            this.btnGetData.Size = new System.Drawing.Size(75, 23);
+            this.btnGetData.Size = new System.Drawing.Size(279, 44);
             this.btnGetData.TabIndex = 1;
             this.btnGetData.Text = "Data al";
             this.btnGetData.UseVisualStyleBackColor = true;
@@ -61,7 +61,7 @@ namespace kampyeri
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(614, 249);
+            this.btnClose.Location = new System.Drawing.Point(238, 144);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(88, 23);
             this.btnClose.TabIndex = 2;
@@ -98,14 +98,15 @@ namespace kampyeri
             this.lblError.AutoSize = true;
             this.lblError.Location = new System.Drawing.Point(80, 228);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 15);
+            this.lblError.Size = new System.Drawing.Size(52, 15);
             this.lblError.TabIndex = 6;
+            this.lblError.Text = "LABEEEL";
             // 
             // BtnConnect
             // 
-            this.BtnConnect.Location = new System.Drawing.Point(80, 77);
+            this.BtnConnect.Location = new System.Drawing.Point(238, 114);
             this.BtnConnect.Name = "BtnConnect";
-            this.BtnConnect.Size = new System.Drawing.Size(75, 23);
+            this.BtnConnect.Size = new System.Drawing.Size(88, 23);
             this.BtnConnect.TabIndex = 7;
             this.BtnConnect.Text = "Baglan";
             this.BtnConnect.UseVisualStyleBackColor = true;

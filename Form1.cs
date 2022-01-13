@@ -35,6 +35,7 @@ namespace kampyeri
         private void Form1_Load(object sender, EventArgs e)
         {
             BaglantiYazisiUpdate(false);
+            lblError.Text = null;
             //dbBaglan();
         }
 
@@ -57,14 +58,19 @@ namespace kampyeri
         {
             try
             {
+                if (connection.State == ConnectionState.Open)
+                {
+                    lblError.Text = "Baglanti zaten acik";
+                }
                 connection.Open();
                 //MessageBox.Show("connection acildi");
                 BaglantiYazisiUpdate(true);
+
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
-                MessageBox.Show("zort");
+                //MessageBox.Show("zort");
             }
         }
 
@@ -83,6 +89,8 @@ namespace kampyeri
                 {
                     DataTable dt = new DataTable();
                     dt.Load(dr);
+                    MessageBox.Show(dataGView.Rows.ToString());
+                    dataGView.ReadOnly = true;
                     dataGView.DataSource = dt;
                 }
             }
@@ -115,12 +123,15 @@ namespace kampyeri
                     //MessageBox.Show(comm.CommandText);
                     comm.ExecuteNonQuery();
                 }
+                indata1.Text = null;
+                indata2.Text = null;
             }
             else
             {
                 MessageBox.Show($"'{indata1.Text}' sayı degil");
                 lblError.Text = "ilk haneye girilen veri sayı değil";
             }
+
         }
 
         private void BtnConnect_Click(object sender, EventArgs e)
