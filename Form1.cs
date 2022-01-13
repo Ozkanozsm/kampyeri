@@ -14,7 +14,7 @@ namespace kampyeri
 
 {
 
-    public partial class Form1 : Form
+    public partial class FormKampY : Form
     {
         private string server = "Server=localhost;";
         private string port = "Port=5432;";
@@ -25,11 +25,29 @@ namespace kampyeri
         private NpgsqlConnection connection;
         private NpgsqlCommand comm;
         private NpgsqlDataReader dr;
-        public Form1()
+        public FormKampY()
         {
+
             InitializeComponent();
             connString = server + port + database + userid + password;
             connection = new NpgsqlConnection(connString);
+            datagvStyle();
+        }
+
+        private void datagvStyle()
+        {
+            dataGView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGView.RowsDefaultCellStyle.BackColor = Color.Beige;
+            dataGView.AlternatingRowsDefaultCellStyle.BackColor = Color.Aqua;
+            dataGView.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.Black;
+            dataGView.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.White;
+            dataGView.RowsDefaultCellStyle.SelectionBackColor = Color.Black;
+            dataGView.RowsDefaultCellStyle.SelectionForeColor = Color.White;
+            dataGView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGView.ColumnHeadersDefaultCellStyle.BackColor = Color.Bisque;
+            //dataGView.EnableHeadersVisualStyles = false;
+            //dataGView.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
+            //dataGView.DefaultCellStyle.SelectionForeColor = Color.SeaGreen;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -89,7 +107,7 @@ namespace kampyeri
                 {
                     DataTable dt = new DataTable();
                     dt.Load(dr);
-                    MessageBox.Show(dataGView.Rows.ToString());
+                    //MessageBox.Show(dataGView.Rows.ToString());
                     dataGView.ReadOnly = true;
                     dataGView.DataSource = dt;
                 }

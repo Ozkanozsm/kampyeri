@@ -1,7 +1,7 @@
 ﻿
 namespace kampyeri
 {
-    partial class Form1
+    partial class FormKampY
     {
         /// <summary>
         ///  Required designer variable.
@@ -43,9 +43,14 @@ namespace kampyeri
             // 
             // dataGView
             // 
+            this.dataGView.AllowUserToAddRows = false;
+            this.dataGView.AllowUserToDeleteRows = false;
+            this.dataGView.AllowUserToResizeRows = false;
+            this.dataGView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGView.Location = new System.Drawing.Point(423, 65);
             this.dataGView.Name = "dataGView";
+            this.dataGView.ReadOnly = true;
             this.dataGView.Size = new System.Drawing.Size(279, 178);
             this.dataGView.TabIndex = 0;
             // 
@@ -121,7 +126,7 @@ namespace kampyeri
             this.lblConnection.TabIndex = 8;
             this.lblConnection.Text = "label1";
             // 
-            // Form1
+            // FormKampY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,8 +140,8 @@ namespace kampyeri
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnGetData);
             this.Controls.Add(this.dataGView);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormKampY";
+            this.Text = "Kamp Yeri";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGView)).EndInit();
             this.ResumeLayout(false);
