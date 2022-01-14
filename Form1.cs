@@ -205,7 +205,6 @@ namespace kampyeri
                             comm.Parameters.AddWithValue("p4", indata4.Text);
                             comm.Parameters.AddWithValue("p5", indata5.Text);
                             comm.Parameters.AddWithValue("p6", ctelno);
-                            //MessageBox.Show(comm.CommandText);
                             comm.ExecuteNonQuery();
                         }
                         MessageBox.Show($"{indata3.Text} eklendi");
@@ -271,7 +270,6 @@ namespace kampyeri
                     {
                         using (comm = new NpgsqlCommand("INSERT INTO musteriler VALUES (@p1, @p2, @p3, @p4, @p5, @p6)", connection))
                         {
-
                             comm.Parameters.AddWithValue("p1", tc);
                             comm.Parameters.AddWithValue("p2", indata2.Text);
                             comm.Parameters.AddWithValue("p3", indata3.Text);
@@ -282,10 +280,8 @@ namespace kampyeri
                             comm.ExecuteNonQuery();
                         }
                         MessageBox.Show($"{indata2.Text} eklendi");
-
                         ClearTextBox();
                     }
-
                     break;
             }
         }
@@ -436,8 +432,8 @@ namespace kampyeri
                     DataTable dt = new();
                     dt.Load(dr);
                     //MessageBox.Show(dataGView.Rows.ToString());
-                    dgvViewli.ReadOnly = true;
-                    dgvViewli.DataSource = dt;
+                    dataGView.ReadOnly = true;
+                    dataGView.DataSource = dt;
                 }
             }
             catch (Exception)
@@ -449,6 +445,10 @@ namespace kampyeri
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            var response = "{\"(\\\"Akdeniz Camping\\\",200)\",\"(Babakamp,150)\",\"(\\\"Aktur Cadir ve Kamping\\\",150)\"}";
+
+
+
             string sehiradi = txboxsehir.Text.ToLower();
             try
             {
@@ -456,7 +456,40 @@ namespace kampyeri
                 {
                     comm.Parameters.AddWithValue("p1", sehiradi);
                     dr = comm.ExecuteReader();
-                    MessageBox.Show(dr.ToString());
+                }
+
+                if (dr.HasRows)
+                {
+                    //var response = dr.;
+                    response = response.Substring(0, response.Length - 3);
+                    response = response.Remove(0, 1);
+
+                    var data = response.Split(new string[] { "\"(", ")\"," }, StringSplitOptions.RemoveEmptyEntries);
+                    var joinli = string.Join("\n", data);
+                    MessageBox.Show(joinli);
+                    DataTable dt = new();
+                    dt.Load(dr);
+                    //MessageBox.Show(dataGView.Rows.ToString());
+                    dataGView.ReadOnly = true;
+                    //MessageBox.Show(dt.Rows);
+                    dataGView.DataSource = dt;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hata olustu.");
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string komutum = "SELECT kampyeriid FROM kampyerleri EXCEPT SELECT calisankampyeriid from kampcalisanlari;";
+            try
+            {
+                using (comm = new NpgsqlCommand(komutum, connection))
+                {
+
+                    dr = comm.ExecuteReader();
                 }
 
                 if (dr.HasRows)
@@ -464,17 +497,101 @@ namespace kampyeri
                     DataTable dt = new();
                     dt.Load(dr);
                     //MessageBox.Show(dataGView.Rows.ToString());
-                    dgvSehir.ReadOnly = true;
+                    dataGView.ReadOnly = true;
                     //MessageBox.Show(dt.Rows);
-                    dgvSehir.DataSource = dt;
+                    dataGView.DataSource = dt;
                 }
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Hata olustu.");
             }
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(textBox4.Text);
+
+            try
+            {
+                using (comm = new NpgsqlCommand("Select * from getmusterilist(@p1)", connection))
+                {
+                    comm.Parameters.AddWithValue("p1", id);
+                    dr = comm.ExecuteReader();
+                }
+
+                if (dr.HasRows)
+                {
+                    DataTable dt = new();
+                    dt.Load(dr);
+                    //MessageBox.Show(dataGView.Rows.ToString());
+                    dataGView.ReadOnly = true;
+                    //MessageBox.Show(dt.Rows);
+                    dataGView.DataSource = dt;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hata olustu.");
+            }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int kampid = int.Parse(textBox5.Text);
+
+            try
+            {
+                using (comm = new NpgsqlCommand("Select * from getgorevcalisan(@p1, @p2)", connection))
+                {
+                    comm.Parameters.AddWithValue("p2", kampid);
+                    comm.Parameters.AddWithValue("p1", textBox6.Text);
+                    dr = comm.ExecuteReader();
+                }
+
+                if (dr.HasRows)
+                {
+                    DataTable dt = new();
+                    dt.Load(dr);
+                    //MessageBox.Show(dataGView.Rows.ToString());
+                    dataGView.ReadOnly = true;
+                    //MessageBox.Show(dt.Rows);
+                    dataGView.DataSource = dt;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hata olustu.");
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int calisansayisi = int.Parse(textBox7.Text);
+            string komut = "SELECT k.calisanKampYeriID, COUNT(*) FROM kampcalisanlari k GROUP BY k.calisanKampYeriID HAVING COUNT(*) >= " + calisansayisi.ToString();
+            try
+            {
+                using (comm = new NpgsqlCommand(komut, connection))
+                {
+                    dr = comm.ExecuteReader();
+                }
+
+                if (dr.HasRows)
+                {
+                    DataTable dt = new();
+                    dt.Load(dr);
+                    //MessageBox.Show(dataGView.Rows.ToString());
+                    dataGView.ReadOnly = true;
+                    //MessageBox.Show(dt.Rows);
+                    dataGView.DataSource = dt;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hata olustu.");
+            }
         }
     }
 }

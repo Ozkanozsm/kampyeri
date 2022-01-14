@@ -67,14 +67,35 @@ namespace kampyeri
             this.cmbxDataGet = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.btnView = new System.Windows.Forms.Button();
-            this.dgvViewli = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             this.cmbxInsert = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvSehir = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.txboxsehir = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -84,10 +105,14 @@ namespace kampyeri
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewli)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSehir)).BeginInit();
             this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGView
@@ -106,7 +131,7 @@ namespace kampyeri
             // 
             // btnGetData
             // 
-            this.btnGetData.Location = new System.Drawing.Point(848, 223);
+            this.btnGetData.Location = new System.Drawing.Point(848, 238);
             this.btnGetData.Name = "btnGetData";
             this.btnGetData.Size = new System.Drawing.Size(358, 23);
             this.btnGetData.TabIndex = 1;
@@ -142,7 +167,7 @@ namespace kampyeri
             // 
             this.btnInsert.Location = new System.Drawing.Point(193, 177);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(281, 47);
+            this.btnInsert.Size = new System.Drawing.Size(281, 45);
             this.btnInsert.TabIndex = 5;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
@@ -169,12 +194,14 @@ namespace kampyeri
             // 
             // lblConnection
             // 
+            this.lblConnection.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblConnection.Location = new System.Drawing.Point(3, 0);
             this.lblConnection.MinimumSize = new System.Drawing.Size(100, 50);
             this.lblConnection.Name = "lblConnection";
             this.lblConnection.Size = new System.Drawing.Size(231, 104);
             this.lblConnection.TabIndex = 8;
             this.lblConnection.Text = "CONNECTION LABEL";
+            this.lblConnection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -191,14 +218,15 @@ namespace kampyeri
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel8, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.cmbxInsert, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel11, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.09524F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.9888F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.97481F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.991603F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.55414F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.57325F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1209, 785);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
@@ -237,7 +265,7 @@ namespace kampyeri
             this.tableLayoutPanel2.Controls.Add(this.lbl6, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.indata5, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.indata6, 1, 5);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 296);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 316);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 7;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -247,7 +275,7 @@ namespace kampyeri
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(477, 265);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(477, 225);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
             // indata3
@@ -343,7 +371,7 @@ namespace kampyeri
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel7, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(486, 296);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(486, 316);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 5;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -452,6 +480,7 @@ namespace kampyeri
             // 
             this.tboxcalidsilinecek.Location = new System.Drawing.Point(3, 3);
             this.tboxcalidsilinecek.Name = "tboxcalidsilinecek";
+            this.tboxcalidsilinecek.PlaceholderText = "tc";
             this.tboxcalidsilinecek.Size = new System.Drawing.Size(71, 23);
             this.tboxcalidsilinecek.TabIndex = 0;
             // 
@@ -479,7 +508,7 @@ namespace kampyeri
             // 
             this.cmbxDataGet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxDataGet.FormattingEnabled = true;
-            this.cmbxDataGet.Location = new System.Drawing.Point(486, 223);
+            this.cmbxDataGet.Location = new System.Drawing.Point(486, 238);
             this.cmbxDataGet.Name = "cmbxDataGet";
             this.cmbxDataGet.Size = new System.Drawing.Size(356, 23);
             this.cmbxDataGet.TabIndex = 12;
@@ -487,15 +516,18 @@ namespace kampyeri
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 1;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.Controls.Add(this.btnView, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.dgvViewli, 0, 1);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(848, 296);
+            this.tableLayoutPanel8.Controls.Add(this.button2, 0, 1);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(848, 316);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 2;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.04511F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.95489F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(358, 266);
+            this.tableLayoutPanel8.RowCount = 4;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(358, 225);
             this.tableLayoutPanel8.TabIndex = 14;
             this.tableLayoutPanel8.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel8_Paint);
             // 
@@ -509,17 +541,15 @@ namespace kampyeri
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
-            // dgvViewli
+            // button2
             // 
-            this.dgvViewli.AllowUserToAddRows = false;
-            this.dgvViewli.AllowUserToDeleteRows = false;
-            this.dgvViewli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvViewli.Location = new System.Drawing.Point(3, 50);
-            this.dgvViewli.Name = "dgvViewli";
-            this.dgvViewli.ReadOnly = true;
-            this.dgvViewli.RowTemplate.Height = 25;
-            this.dgvViewli.Size = new System.Drawing.Size(352, 212);
-            this.dgvViewli.TabIndex = 15;
+            this.button2.Location = new System.Drawing.Point(3, 54);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(350, 41);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Çalışanı olmayan kamp yerlerini getir";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // cmbxInsert
             // 
@@ -528,7 +558,7 @@ namespace kampyeri
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbxInsert.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxInsert.FormattingEnabled = true;
-            this.cmbxInsert.Location = new System.Drawing.Point(3, 223);
+            this.cmbxInsert.Location = new System.Drawing.Point(3, 238);
             this.cmbxInsert.Name = "cmbxInsert";
             this.cmbxInsert.Size = new System.Drawing.Size(477, 23);
             this.cmbxInsert.TabIndex = 9;
@@ -539,26 +569,16 @@ namespace kampyeri
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.dgvSehir, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel10, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 575);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel15, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel16, 0, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 547);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(477, 155);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.14286F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(477, 203);
             this.tableLayoutPanel3.TabIndex = 16;
-            // 
-            // dgvSehir
-            // 
-            this.dgvSehir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSehir.Location = new System.Drawing.Point(241, 3);
-            this.dgvSehir.Name = "dgvSehir";
-            this.tableLayoutPanel3.SetRowSpan(this.dgvSehir, 2);
-            this.dgvSehir.RowTemplate.Height = 25;
-            this.dgvSehir.Size = new System.Drawing.Size(233, 149);
-            this.dgvSehir.TabIndex = 1;
             // 
             // tableLayoutPanel10
             // 
@@ -566,12 +586,15 @@ namespace kampyeri
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Controls.Add(this.txboxsehir, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.button1, 1, 1);
             this.tableLayoutPanel10.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(232, 71);
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(232, 107);
             this.tableLayoutPanel10.TabIndex = 2;
             // 
             // txboxsehir
@@ -580,6 +603,17 @@ namespace kampyeri
             this.txboxsehir.Name = "txboxsehir";
             this.txboxsehir.Size = new System.Drawing.Size(110, 23);
             this.txboxsehir.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.tableLayoutPanel10.SetColumnSpan(this.button1, 2);
+            this.button1.Location = new System.Drawing.Point(3, 52);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(226, 31);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Şehirdeki kamp yerlerini göster";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label5
             // 
@@ -590,15 +624,232 @@ namespace kampyeri
             this.label5.TabIndex = 1;
             this.label5.Text = "Şehir Adı Giriniz";
             // 
-            // button1
+            // tableLayoutPanel15
             // 
-            this.button1.Location = new System.Drawing.Point(3, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(232, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Şehirdeki kamp yerlerini göster";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.tableLayoutPanel15.ColumnCount = 2;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel15.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.textBox4, 1, 0);
+            this.tableLayoutPanel15.Controls.Add(this.button4, 0, 1);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(241, 3);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 2;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.84112F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.15888F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(233, 107);
+            this.tableLayoutPanel15.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 15);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "id giriniz";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(119, 3);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 23);
+            this.textBox4.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.tableLayoutPanel15.SetColumnSpan(this.button4, 2);
+            this.button4.Location = new System.Drawing.Point(3, 35);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(227, 47);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "id\'si verilen kampın müşterilerini göster";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // tableLayoutPanel16
+            // 
+            this.tableLayoutPanel16.ColumnCount = 2;
+            this.tableLayoutPanel3.SetColumnSpan(this.tableLayoutPanel16, 2);
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.Controls.Add(this.button5, 1, 0);
+            this.tableLayoutPanel16.Controls.Add(this.textBox5, 0, 1);
+            this.tableLayoutPanel16.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel16.Controls.Add(this.textBox6, 1, 1);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 119);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 2;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(468, 81);
+            this.tableLayoutPanel16.TabIndex = 4;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(237, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(228, 34);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "kamptaki görevlileri göster";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(3, 43);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.PlaceholderText = "kampyeriid";
+            this.textBox5.Size = new System.Drawing.Size(226, 23);
+            this.textBox5.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(218, 30);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "bir kamptaki belirli görevdeki çalışanları göster";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(237, 43);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.PlaceholderText = "görev";
+            this.textBox6.Size = new System.Drawing.Size(228, 23);
+            this.textBox6.TabIndex = 2;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 2;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Controls.Add(this.textBox7, 1, 0);
+            this.tableLayoutPanel11.Controls.Add(this.button6, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.label10, 0, 0);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(486, 547);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.86792F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.13207F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(356, 212);
+            this.tableLayoutPanel11.TabIndex = 17;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(181, 3);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.PlaceholderText = "çalışan sayısı";
+            this.textBox7.Size = new System.Drawing.Size(100, 23);
+            this.textBox7.TabIndex = 0;
+            // 
+            // button6
+            // 
+            this.tableLayoutPanel11.SetColumnSpan(this.button6, 2);
+            this.button6.Location = new System.Drawing.Point(3, 42);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(347, 31);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "Çalışanları filtrele";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(163, 30);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Filtrelemek istediğiniz çalışan sayısını giriniz";
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 2;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Controls.Add(this.textBox2, 1, 0);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel13.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(103, 3);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(94, 23);
+            this.textBox2.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 15);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Şehir Adı Giriniz";
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.ColumnCount = 2;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.Controls.Add(this.textBox3, 1, 0);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 1;
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel14.TabIndex = 0;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(103, 3);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(94, 23);
+            this.textBox3.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 15);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Şehir Adı Giriniz";
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 2;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 1;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel12.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(103, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(94, 23);
+            this.textBox1.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(3, 32);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(194, 31);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Şehirdeki kamp yerlerini göster";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // FormKampY
             // 
@@ -624,11 +875,21 @@ namespace kampyeri
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewli)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSehir)).EndInit();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
+            this.tableLayoutPanel16.ResumeLayout(false);
+            this.tableLayoutPanel16.PerformLayout();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel13.PerformLayout();
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.tableLayoutPanel14.PerformLayout();
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -674,13 +935,34 @@ namespace kampyeri
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.DataGridView dgvViewli;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox txboxsehir;
-        private System.Windows.Forms.DataGridView dgvSehir;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label10;
     }
 }
 
