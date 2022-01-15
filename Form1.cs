@@ -158,111 +158,120 @@ namespace kampyeri
             int mkampyeriid;
             decimal mtelno;
             bool cntrl1, cntrl2, cntrl3, cntrl4;
-            switch (insertlenecek)
+            if (connection.State == ConnectionState.Open)
             {
-                case 0:
-                    cntrl1 = int.TryParse(indata1.Text, out tc);
-                    cntrl2 = int.TryParse(indata2.Text, out ckampyid);
-                    cntrl3 = decimal.TryParse(indata6.Text, out ctelno);
-                    if (!cntrl1)
-                    {
-                        MessageBox.Show("TC sayi degil");
-                    }
-                    if (!cntrl2)
-                    {
-                        MessageBox.Show("Kamp yeri id sayi degil");
-                    }
-                    if (!cntrl3)
-                    {
-                        MessageBox.Show("TEL no sayi degil");
-                    }
-                    if (cntrl1 && cntrl2 && cntrl3)
-                    {
-                        using (comm = new NpgsqlCommand("INSERT INTO kampcalisanlari VALUES (@p1, @p2, @p3, @p4, @p5, @p6)", connection))
+                switch (insertlenecek)
+                {
+                    case 0:
+                        cntrl1 = int.TryParse(indata1.Text, out tc);
+                        cntrl2 = int.TryParse(indata2.Text, out ckampyid);
+                        cntrl3 = decimal.TryParse(indata6.Text, out ctelno);
+                        if (!cntrl1)
                         {
-
-                            comm.Parameters.AddWithValue("p1", tc);
-                            comm.Parameters.AddWithValue("p2", ckampyid);
-                            comm.Parameters.AddWithValue("p3", indata3.Text);
-                            comm.Parameters.AddWithValue("p4", indata4.Text);
-                            comm.Parameters.AddWithValue("p5", indata5.Text);
-                            comm.Parameters.AddWithValue("p6", ctelno);
-                            comm.ExecuteNonQuery();
+                            MessageBox.Show("TC sayi degil");
                         }
-                        MessageBox.Show($"{indata3.Text} eklendi");
-                        ClearTextBox();
-                    }
-
-                    break;
-                case 1:
-                    cntrl1 = int.TryParse(indata3.Text, out kapasite);
-                    if (!cntrl1)
-                    {
-                        MessageBox.Show("Kapasite sayi degil");
-                    }
-                    if (cntrl1)
-                    {
-                        using (comm = new NpgsqlCommand("INSERT INTO kampyerleri VALUES (default, @p1, @p2, @p3)", connection))
+                        if (!cntrl2)
                         {
-
-                            comm.Parameters.AddWithValue("p1", indata1.Text);
-                            comm.Parameters.AddWithValue("p2", indata2.Text);
-                            comm.Parameters.AddWithValue("p3", kapasite);
-                            comm.ExecuteNonQuery();
+                            MessageBox.Show("Kamp yeri id sayi degil");
                         }
-                        MessageBox.Show($"{indata1.Text} eklendi");
-
-                        ClearTextBox();
-                    }
-
-                    break;
-                case 2:
-                    cntrl1 = int.TryParse(indata1.Text, out tc);
-                    cntrl2 = int.TryParse(indata4.Text, out yas);
-                    cntrl3 = decimal.TryParse(indata5.Text, out mtelno);
-                    cntrl4 = int.TryParse(indata6.Text, out mkampyeriid);
-                    if (!cntrl1)
-                    {
-                        MessageBox.Show("TC sayi degil");
-                    }
-                    if (!cntrl2)
-                    {
-                        MessageBox.Show("Yas sayi degil");
-                    }
-                    if (!cntrl3)
-                    {
-                        MessageBox.Show("Tel no sayi degil");
-                    }
-                    if (!cntrl4)
-                    {
-                        MessageBox.Show("Kamp yeri id sayi degil");
-                    }
-                    try
-                    {
-                        if (cntrl1 && cntrl2 && cntrl3 && cntrl4)
+                        if (!cntrl3)
                         {
-                            using (comm = new NpgsqlCommand("INSERT INTO musteriler VALUES (@p1, @p2, @p3, @p4, @p5, @p6)", connection))
+                            MessageBox.Show("TEL no sayi degil");
+                        }
+                        if (cntrl1 && cntrl2 && cntrl3)
+                        {
+                            using (comm = new NpgsqlCommand("INSERT INTO kampcalisanlari VALUES (@p1, @p2, @p3, @p4, @p5, @p6)", connection))
                             {
-                                comm.Parameters.AddWithValue("p1", tc);
-                                comm.Parameters.AddWithValue("p2", indata2.Text);
-                                comm.Parameters.AddWithValue("p3", indata3.Text);
-                                comm.Parameters.AddWithValue("p4", yas);
-                                comm.Parameters.AddWithValue("p5", mtelno);
-                                comm.Parameters.AddWithValue("p6", mkampyeriid);
 
+                                comm.Parameters.AddWithValue("p1", tc);
+                                comm.Parameters.AddWithValue("p2", ckampyid);
+                                comm.Parameters.AddWithValue("p3", indata3.Text);
+                                comm.Parameters.AddWithValue("p4", indata4.Text);
+                                comm.Parameters.AddWithValue("p5", indata5.Text);
+                                comm.Parameters.AddWithValue("p6", ctelno);
                                 comm.ExecuteNonQuery();
                             }
-                            MessageBox.Show($"{indata2.Text} eklendi");
+                            MessageBox.Show($"{indata3.Text} eklendi");
                             ClearTextBox();
                         }
-                    }
 
-                    catch (Exception error)
-                    {
-                        MessageBox.Show(error.Message, "HATA");
-                    }
-                    break;
+                        break;
+                    case 1:
+                        cntrl1 = int.TryParse(indata3.Text, out kapasite);
+                        if (!cntrl1)
+                        {
+                            MessageBox.Show("Kapasite sayi degil");
+                        }
+                        if (cntrl1)
+                        {
+                            using (comm = new NpgsqlCommand("INSERT INTO kampyerleri VALUES (default, @p1, @p2, @p3)", connection))
+                            {
+
+                                comm.Parameters.AddWithValue("p1", indata1.Text);
+                                comm.Parameters.AddWithValue("p2", indata2.Text);
+                                comm.Parameters.AddWithValue("p3", kapasite);
+                                comm.ExecuteNonQuery();
+                            }
+                            MessageBox.Show($"{indata1.Text} eklendi");
+
+                            ClearTextBox();
+                        }
+
+                        break;
+                    case 2:
+                        cntrl1 = int.TryParse(indata1.Text, out tc);
+                        cntrl2 = int.TryParse(indata4.Text, out yas);
+                        cntrl3 = decimal.TryParse(indata5.Text, out mtelno);
+                        cntrl4 = int.TryParse(indata6.Text, out mkampyeriid);
+                        if (!cntrl1)
+                        {
+                            MessageBox.Show("TC sayi degil");
+                        }
+                        if (!cntrl2)
+                        {
+                            MessageBox.Show("Yas sayi degil");
+                        }
+                        if (!cntrl3)
+                        {
+                            MessageBox.Show("Tel no sayi degil");
+                        }
+                        if (!cntrl4)
+                        {
+                            MessageBox.Show("Kamp yeri id sayi degil");
+                        }
+                        try
+                        {
+                            if (cntrl1 && cntrl2 && cntrl3 && cntrl4)
+                            {
+                                using (comm = new NpgsqlCommand("INSERT INTO musteriler VALUES (@p1, @p2, @p3, @p4, @p5, @p6)", connection))
+                                {
+                                    comm.Parameters.AddWithValue("p1", tc);
+                                    comm.Parameters.AddWithValue("p2", indata2.Text);
+                                    comm.Parameters.AddWithValue("p3", indata3.Text);
+                                    comm.Parameters.AddWithValue("p4", yas);
+                                    comm.Parameters.AddWithValue("p5", mtelno);
+                                    comm.Parameters.AddWithValue("p6", mkampyeriid);
+
+                                    comm.ExecuteNonQuery();
+                                }
+                                MessageBox.Show($"{indata2.Text} eklendi");
+                                ClearTextBox();
+                            }
+                        }
+
+                        catch (Exception error)
+                        {
+                            MessageBox.Show(error.Message, "HATA");
+                        }
+                        break;
+                }
+
             }
+            else
+            {
+                MessageBox.Show("Baglanti kapali");
+            }
+
         }
 
         private void BtnConnect_Click(object sender, EventArgs e)
@@ -461,9 +470,10 @@ namespace kampyeri
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(textBox4.Text);
             try
             {
+                int id = int.Parse(textBox4.Text);
+
                 using (comm = new NpgsqlCommand("Select * from getmusterilist(@p1)", connection))
                 {
                     comm.Parameters.AddWithValue("p1", id);
@@ -485,51 +495,69 @@ namespace kampyeri
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int kampid = int.Parse(textBox5.Text);
-            try
+            if (connection.State == ConnectionState.Open)
             {
-                using (comm = new NpgsqlCommand("Select * from getgorevcalisan(@p1, @p2)", connection))
+                int kampid = int.Parse(textBox5.Text);
+
+                try
                 {
-                    comm.Parameters.AddWithValue("p2", kampid);
-                    comm.Parameters.AddWithValue("p1", textBox6.Text);
-                    dr = comm.ExecuteReader();
+                    using (comm = new NpgsqlCommand("Select * from getgorevcalisan(@p1, @p2)", connection))
+                    {
+                        comm.Parameters.AddWithValue("p2", kampid);
+                        comm.Parameters.AddWithValue("p1", textBox6.Text);
+                        dr = comm.ExecuteReader();
+                    }
+                    if (dr.HasRows)
+                    {
+                        DataTable dt = new();
+                        dt.Load(dr);
+                        dataGView.ReadOnly = true;
+                        dataGView.DataSource = dt;
+                    }
                 }
-                if (dr.HasRows)
+                catch (Exception)
                 {
-                    DataTable dt = new();
-                    dt.Load(dr);
-                    dataGView.ReadOnly = true;
-                    dataGView.DataSource = dt;
+                    MessageBox.Show("Hata olustu.");
                 }
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Hata olustu.");
+                MessageBox.Show("Baglanti kapali");
             }
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            int calisansayisi = int.Parse(textBox7.Text);
-            string komut = "SELECT k.calisanKampYeriID, COUNT(*) FROM kampcalisanlari k GROUP BY k.calisanKampYeriID HAVING COUNT(*) >= " + calisansayisi.ToString();
-            try
+            if (connection.State == ConnectionState.Open)
             {
-                using (comm = new NpgsqlCommand(komut, connection))
+                int calisansayisi = int.Parse(textBox7.Text);
+                string komut = "SELECT k.calisanKampYeriID, COUNT(*) FROM kampcalisanlari k GROUP BY k.calisanKampYeriID HAVING COUNT(*) >= " + calisansayisi.ToString();
+
+                try
                 {
-                    dr = comm.ExecuteReader();
+                    using (comm = new NpgsqlCommand(komut, connection))
+                    {
+                        dr = comm.ExecuteReader();
+                    }
+                    if (dr.HasRows)
+                    {
+                        DataTable dt = new();
+                        dt.Load(dr);
+                        dataGView.ReadOnly = true;
+                        dataGView.DataSource = dt;
+                    }
                 }
-                if (dr.HasRows)
+                catch (Exception)
                 {
-                    DataTable dt = new();
-                    dt.Load(dr);
-                    dataGView.ReadOnly = true;
-                    dataGView.DataSource = dt;
+                    MessageBox.Show("Hata olustu.");
                 }
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Hata olustu.");
+                MessageBox.Show("Baglanti kapali");
             }
+
         }
 
         private void btnSirala_Click(object sender, EventArgs e)
